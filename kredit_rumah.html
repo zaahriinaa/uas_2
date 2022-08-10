@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>UAS WEB - Kredit Rumah</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <script>
+        function inputdata() {
+            let hargaRumah;
+            let uangMuka = 0.2;
+            const tipeRumah = document.getElementById("tipe").value;
+            let lamaKredit = parseInt(document.getElementById("lamaKredit").value);
+            let Angsuran = 4000000;
+
+            if (lamaKredit == 0) {
+                alert("Masukkan Lama Kredit Terlebih Dahulu");
+
+                return;
+            }
+            // Tipe Rumah
+            if (tipeRumah == "MAWAR") {
+                hargaRumah = 130000000;
+            } else if (tipeRumah == "ALAMANDA") {
+                hargaRumah = 120000000;
+            } else {
+                alert("Pilih Tipe Rumah Terlebih Dahulu");
+                return;
+            }
+            // Uang muka
+            let hasiluang = uangMuka * hargaRumah;
+
+            // Sisa
+            let hasilSisa = hargaRumah - hasiluang;
+            let bulan = "";
+            let oangsur = "";
+            let total = "";
+            let angsur = 0;
+            let totalangsur = hasilSisa - angsur;
+
+            let x = lamaKredit;
+            for (let i = 1; i <= x; i++) {
+                bulan += i + "<br>";
+                oangsur += Angsuran + "<br>";
+                totalangsur -= 4000000;
+                total += totalangsur + "<br>";
+            }
+            document.getElementById("tipeRumah").innerHTML = tipeRumah;
+            document.getElementById("hargaRumah").innerHTML = hargaRumah;
+            document.getElementById("uangMuka").innerHTML = hasiluang;
+            document.getElementById("sisa").innerHTML = hasilSisa;
+            document.getElementById("Kredit").innerHTML = lamaKredit;
+            document.getElementById("angsuran").innerHTML = Angsuran;
+            document.getElementById("obulan").innerHTML = bulan;
+            document.getElementById("oangsur").innerHTML = oangsur;
+            document.getElementById("osisa").innerHTML = total;
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light pt-3 d-none d-lg-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center">
+                        <p><i class="fa fa-envelope mr-2"></i>zahrina.nurpuriani.si.21@cic.ac.id</p>
+                        <p class="text-body px-3">|</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+62 881 8212 718</p>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center text-lg-right">
+                    <div class="d-inline-flex align-items-center">
+                        <a class="text-primary px-3" href="https://www.instagram.com/zaahriinaa/">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a class="text-primary pl-3" href="https://www.youtube.com/channel/UCIJXsSVjvAe8bYc7Rnm1rnA">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative nav-bar p-0">
+        <div class="container-lg position-relative p-0 px-lg-3" style="z-index: 9;">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light shadow-lg py-3 py-lg-0 pl-3 pl-lg-5">
+                <a href="" class="navbar-brand">
+                    <h1 class="m-0 text-primary"><span class="text-dark">UAS</span>WEB</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between px-3" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Penjualan</a>
+                            <div class="dropdown-menu border-0 rounded-0 m-0">
+                                <a href="penjualan_barang.html" class="dropdown-item">Penjualan Barang</a>
+                                <a href="penjualan_elektronik.html" class="dropdown-item">Penjualan Barang
+                                    Elektronik</a>
+                                <a href="destination.html" class="dropdown-item">Penjualan Motor</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pembelian</a>
+                            <div class="dropdown-menu border-0 rounded-0 m-0">
+                                <a href="pembelian_barang_1.html" class="dropdown-item">Pembelian Barang (Tanpa
+                                    Diskon)</a>
+                                <a href="pembelian_barang_2.html" class="dropdown-item">Pembelian Barang (Diskon)</a>
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Lainnya</a>
+                            <div class="dropdown-menu border-0 rounded-0 m-0">
+                                <a href="program_penggajian.html" class="dropdown-item">Penggajian Pegawai</a>
+                                <a href="tagihan_listrik.html" class="dropdown-item">Tagihan Listrik</a>
+                                <a href="kredit_rumah.html" class="dropdown-item">Kredit Rumah</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid page-header">
+        <div class="container">
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px">
+                <h3 class="display-4 text-white text-uppercase">Program Kredit Rumah</h3>
+                <div class="d-inline-flex text-white">
+                    <p class="m-0 text-uppercase"><a class="text-white" href="">Home</a></p>
+                    <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                    <p class="m-0 text-uppercase">Kredit Rumah</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Penjualan Barang Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col" align="center">
+                    <form method="POST" action=" " name="form_kredit_rumah">
+                        <table width="40%">
+                            <tr>
+                                <td>Type Rumah</td>
+                                <td>:</td>
+                                <td style="padding-left: 10px;">
+                                    <select name="tipe" id="tipe" style="width: 280px;">
+                                        <option selected>-Type Rumah-</option>
+                                        <option value="ALAMANDA">ALAMANDA</option>
+                                        <option value="MAWAR">MAWAR</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Lama Kredit</td>
+                                <td>:</td>
+                                <td style="padding-left: 10px;">
+                                    <input type="text" id="lamaKredit" name="lamaKredit" size="30">
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <p>
+                            <button class="button btn-success" onClick='inputdata()' type="button" name="Bsubmit"
+                                data-toggle="modal" data-target="#statusModal">Proses</button>
+                            <button class="button btn-info" type="reset" name="Breset">Reset</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Start Modal Kredit Rumah -->
+            <div class="modal" id="statusModal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Program Kredit Rumah</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table width="100%">
+                                <tbody>
+                                    <tr>
+                                        <td>Type Rumah</td>
+                                        <td>=</td>
+                                        <td>
+                                            <div id="tipeRumah"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Harga Rumah</td>
+                                        <td>=</td>
+                                        <td>
+                                            <div id="hargaRumah"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>uang Muka</td>
+                                        <td>=</td>
+                                        <td>
+                                            <div id="uangMuka"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sisa</td>
+                                        <td>=</td>
+                                        <td>
+                                            <div id="sisa"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Lama Kredit</td>
+                                        <td>=</td>
+                                        <td>
+                                            <div id="Kredit"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Angsuran</td>
+                                        <td>=</td>
+                                        <td>
+                                            <div id="angsuran"></div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <table id="0" border="2" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Bulan</th>
+                                        <th>Angsuran</th>
+                                        <th>Sisa</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td id="obulan"></td>
+                                        <td id="oangsur"></td>
+                                        <td id="osisa"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Modal Kredit Rumah -->
+
+        </div>
+    </div>
+    <!-- Penjualan Barang End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white border-top py-4 px-sm-3 px-md-5"
+        style="border-color: rgba(256, 256, 256, .1) !important;">
+        <div class="row">
+            <div class="col-lg-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white-50">Copyright &copy; 2022. All Rights Reserved.</a>
+                </p>
+            </div>
+            <div class="col-lg-6 text-center text-md-right">
+                <p class="m-0 text-white-50">Made with ❤️ ZN</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
